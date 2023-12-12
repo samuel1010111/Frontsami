@@ -1,44 +1,127 @@
-.profile{
-    display: flex;
-}
-.profileRight{
-    flex: 9;
-}
-.profileCover{
-    height: 320px;
-    position: relative;
-}
-.profileCoverImg{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50px;
-    position: relative;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 150px;
-    border: 3px solid white;
+/* Import your theme or style file here */
+/* @import "../../style.scss"; */
 
-
-
-}
-.profileInfo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center ;
-
-}
-.profileUserImg{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-
-
-
-
-}
-.profileRightBottom{
-    display: flex;
-}
+.profile {
+    background-color:  themed("bgSoft") ;
+  
+    .images {
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
+  
+    .images .cover {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .images .profilePic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 200px;
+    }
+  
+    .profileContainer {
+      padding: 20px 70px;
+  
+      @media (max-width: 767px) {
+        padding: 10px;
+      }
+  
+      @media (min-width: 768px) and (max-width: 1023px) {
+        padding: 20px;
+      }
+  
+      .uInfo {
+        height: 180px;
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 20px;
+        background-color: themed("bg") ;
+        color:  themed("textColor") ;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+  
+        @media (max-width: 767px) {
+          flex-direction: column;
+          height: 30vh;
+          padding: 20px;
+          margin-top: 100px;
+        }
+  
+        .uInfo .left {
+          flex: 1;
+          display: flex;
+          gap: 10px;
+  
+          @media (min-width: 768px) and (max-width: 1023px) {
+            flex-wrap: wrap;
+          }
+  
+          .uInfo a {
+            color:  themed("textColorSoft") ;
+          }
+        }
+  
+        .uInfo .center {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+  
+          .uInfo .center span {
+            font-size: 30px;
+            font-weight: 500;
+          }
+  
+          .uInfo .center .info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+  
+            .uInfo .center .info .item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              color:  themed("textColorSoft") ;
+  
+              .uInfo .center .info .item span {
+                font-size: 12px;
+              }
+            }
+          }
+  
+          .uInfo .center button {
+            border: none;
+            background-color: #5271ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+  
+        .uInfo .right {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+        }
+      }
+    }
+  }
+  

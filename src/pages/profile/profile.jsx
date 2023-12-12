@@ -1,39 +1,73 @@
 import "./profile.css";
-import Topbar from "../../components/topbar/Topbar";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Rightbar from "../../components/rightbar/Rightbar";
-import Feed from "../../components/feed/Feed";
+import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import PinterestIcon from "@mui/icons-material/Pinterest";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import PlaceIcon from "@mui/icons-material/Place";
+import LanguageIcon from "@mui/icons-material/Language";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import Posts from "../../components/posts/Posts"
+import { Profile } from "../pages/profile/profile";
 
-export default function Profile() {
-return(
-  <>
-  <Topbar/>
-    <div className="homeContainer">
-      <Sidebar/>
-      <div className="profileRight">
-      <div className="profileRightTop">
-        <div className="profileCover"></div>
-        
-        <img className ="profileCoverImg" src="assets/posts/3.jpg" alt =""/>
-        <img className ="profileUser" src="assets/posts/3.jpg" alt =""/>
-
+const Profile = () => {
+  return (
+    <div className="profile">
+      <div className="images">
+        <img
+          src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt=""
+          className="cover"
+        />
+        <img
+          src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+          alt=""
+          className="profilePic"
+        />
       </div>
-      <div className="profileInfo">
-        <h4 className="profileInfoName">safak kocaoglu</h4>
-        <span className="profileInfoName">Hello my friend</span>
+      <div className="profileContainer">
+        <div className="uInfo">
+          <div className="left">
+            <a href="http://facebook.com">
+              <FacebookTwoToneIcon fontSize="large" />
+            </a>
+            <a href="http://facebook.com">
+              <InstagramIcon fontSize="large" />
+            </a>
+            <a href="http://facebook.com">
+              <TwitterIcon fontSize="large" />
+            </a>
+            <a href="http://facebook.com">
+              <LinkedInIcon fontSize="large" />
+            </a>
+            <a href="http://facebook.com">
+              <PinterestIcon fontSize="large" />
+            </a>
+          </div>
+          <div className="center">
+            <span>Jane Doe</span>
+            <div className="info">
+              <div className="item">
+                <PlaceIcon />
+                <span>USA</span>
+              </div>
+              <div className="item">
+                <LanguageIcon />
+                <span>lama.dev</span>
+              </div>
+            </div>
+            <button>follow</button>
+          </div>
+          <div className="right">
+            <EmailOutlinedIcon />
+            <MoreVertIcon />
+          </div>
+        </div>
+      <Posts/>
       </div>
-      <div className="profileRightBottom">
-        
-
-
-      </div>
-        <Feed/>
-        <Rightbar/>
-      
     </div>
-    </div>
-  
-  </>
-)
+  );
+};
 
-}
+export default Profile;
